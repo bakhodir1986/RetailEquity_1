@@ -6,11 +6,7 @@ using System.Linq;
 
 namespace RetailEquity.Task1.Bank
 {
-    public class UKBofaBank : IFilter
+    public class UKBofaBank : USABofaBank
     {
-        public IEnumerable<Trade> Match(IEnumerable<Trade> trades)
-        {
-            return trades.Where(t => t.Amount > 70);
-        }
     }
 }
