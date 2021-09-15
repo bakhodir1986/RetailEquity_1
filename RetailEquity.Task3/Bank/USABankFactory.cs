@@ -2,7 +2,7 @@
 
 namespace RetailEquity.Task1.Bank
 {
-    public class  BankFactory : IBank
+    public class  USABankFactory : IBank
     {
         public IFilter CreateBank(RetailEquity.Bank bank)
         {
@@ -11,16 +11,16 @@ namespace RetailEquity.Task1.Bank
             switch (bank)
             {
                 case RetailEquity.Bank.Barclays:
-                    filter = new BarclaysBank();
+                    filter = new USABarclaysBank();
                     break;
                 case RetailEquity.Bank.Bofa:
-                    filter = new BofaBank();
+                    filter = new USABofaBank();
                     break;
                 case RetailEquity.Bank.Connacord:
-                    filter = new ConnacordBank();
+                    filter = new USAConnacordBank();
                     break;
                 case RetailEquity.Bank.DeutscheBank:
-                    filter = new DeutscheBank();
+                    filter = new USADeutscheBank();
                     break;
                 default:
                     throw new Exception("Invalid Bank");

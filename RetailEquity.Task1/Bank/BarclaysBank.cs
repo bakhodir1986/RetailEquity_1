@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace RetailEquity.Task1.Bank
 {
-    public class BarclaysBank : IBank
+    public class BarclaysBank : IFilter
     {
         public IEnumerable<Trade> Match(IEnumerable<Trade> trades)
         {

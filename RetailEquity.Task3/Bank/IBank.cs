@@ -1,12 +1,11 @@
-﻿using RetailEquity.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace RetailEquity.Task3.Bank
+namespace RetailEquity.Task1.Bank
 {
     public interface IBank
     {
-        IEnumerable<Trade> Match(IEnumerable<Trade> trades, Country country);
+        public IFilter CreateBank(RetailEquity.Bank bank);
     }
 }

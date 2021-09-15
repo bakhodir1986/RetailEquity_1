@@ -1,8 +1,11 @@
-﻿using System;
+﻿using RetailEquity.Task1.Bank;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace RetailEquity.Task1.Bank
 {
-    public class  BankFactory : IBank
+    public class UKBankFactory : IBank
     {
         public IFilter CreateBank(RetailEquity.Bank bank)
         {
@@ -11,16 +14,16 @@ namespace RetailEquity.Task1.Bank
             switch (bank)
             {
                 case RetailEquity.Bank.Barclays:
-                    filter = new BarclaysBank();
+                    filter = new UKBarclaysBank();
                     break;
                 case RetailEquity.Bank.Bofa:
-                    filter = new BofaBank();
+                    filter = new UKBofaBank();
                     break;
                 case RetailEquity.Bank.Connacord:
-                    filter = new ConnacordBank();
+                    filter = new UKConnacordBank();
                     break;
                 case RetailEquity.Bank.DeutscheBank:
-                    filter = new DeutscheBank();
+                    filter = new UKDeutscheBank();
                     break;
                 default:
                     throw new Exception("Invalid Bank");
@@ -28,6 +31,5 @@ namespace RetailEquity.Task1.Bank
 
             return filter;
         }
-
     }
 }

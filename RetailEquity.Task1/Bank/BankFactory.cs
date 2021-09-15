@@ -1,30 +1,30 @@
-﻿namespace RetailEquity.Task1.Bank
+﻿using System;
+
+namespace RetailEquity.Task1.Bank
 {
-    public abstract class  BankFactory
+    public class  BankFactory : IBank
     {
-        //public static IBank CreateBank(RetailEquity.Bank bank)
-        //{
-        //    IBank _bank;
+        public IFilter CreateBank(RetailEquity.Bank bank)
+        {
+            IFilter filter;
 
-        //    switch (bank)
-        //    {
-        //        case RetailEquity.Bank.Barclays:
-        //            _bank = new BarclaysBank();
-        //            break;
-        //        case RetailEquity.Bank.Bofa:
-        //            _bank = new BofaBank();
-        //            break;
-        //        case RetailEquity.Bank.Connacord:
-        //            _bank = new ConnacordBank();
-        //            break;
-        //        default:
-        //            throw new System.Exception("Invalid Bank");
-        //    }
+            switch (bank)
+            {
+                case RetailEquity.Bank.Barclays:
+                    filter = new BarclaysBank();
+                    break;
+                case RetailEquity.Bank.Bofa:
+                    filter = new BofaBank();
+                    break;
+                case RetailEquity.Bank.Connacord:
+                    filter = new ConnacordBank();
+                    break;
+                default:
+                    throw new Exception("Invalid Bank");
+            }
 
-        //    return _bank;
-        //}
-
-        public abstract IBank CreateBank();
+            return filter;
+        }
 
     }
 }

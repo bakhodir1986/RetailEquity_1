@@ -6,11 +6,11 @@ using System.Linq;
 
 namespace RetailEquity.Task1.Bank
 {
-    public class ConnacordBank : IFilter
+    public class USABarclaysBank : IFilter
     {
         public IEnumerable<Trade> Match(IEnumerable<Trade> trades)
         {
-            return trades.Where(t => t.Type == TradeType.Future && t.Amount > 10 && t.Amount < 40);
+            return trades.Where(t => t.Type == TradeType.Option && t.SubType == TradeSubType.NyOption && t.Amount > 50);
         }
     }
 }

@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 
-namespace RetailEquity.Task3.Bank
+namespace RetailEquity.Task1.Bank
 {
-    public class BofaBank : IBank
+    public class UKBofaBank : IFilter
     {
-        public IEnumerable<Trade> Match(IEnumerable<Trade> trades, Country country)
+        public IEnumerable<Trade> Match(IEnumerable<Trade> trades)
         {
             return trades.Where(t => t.Amount > 70);
         }
